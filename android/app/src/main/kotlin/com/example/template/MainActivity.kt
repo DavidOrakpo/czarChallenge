@@ -1,4 +1,4 @@
-package com.example.template
+package com.example.challenge
 
 import io.flutter.embedding.android.FlutterActivity
 
