@@ -22,3 +22,32 @@ class CustomSlideTransition extends CustomTransitionPage<void> {
           },
         );
 }
+
+class CustomFadeTransition extends CustomTransitionPage<void> {
+  CustomFadeTransition({super.key, required super.child})
+      : super(
+          transitionDuration: const Duration(milliseconds: 750),
+          transitionsBuilder: (_, animation, __, child) {
+            return FadeTransition(
+              opacity:
+                  CurveTween(curve: Curves.easeInOutCirc).animate(animation),
+              child: child,
+            );
+          },
+        );
+}
+
+class CustomScaleTransition extends CustomTransitionPage<void> {
+  CustomScaleTransition({super.key, required super.child})
+      : super(
+          transitionDuration: const Duration(milliseconds: 150),
+          transitionsBuilder: (_, animation, __, child) {
+            return ScaleTransition(
+              scale: animation,
+              // opacity:
+              //     CurveTween(curve: Curves.easeInOutCirc).animate(animation),
+              child: child,
+            );
+          },
+        );
+}

@@ -6,7 +6,7 @@ import 'package:template/presentation/styles/text_styles.dart';
 class Styles {
   static ThemeData themeData(bool isDarkTheme, BuildContext context) {
     return ThemeData(
-      textTheme: GoogleFonts.mulishTextTheme(
+      textTheme: GoogleFonts.josefinSansTextTheme(
         Theme.of(context).textTheme.apply(
               bodyColor: isDarkTheme ? AppColors.white : AppColors.black,
               displayColor: isDarkTheme ? AppColors.white : AppColors.black,
