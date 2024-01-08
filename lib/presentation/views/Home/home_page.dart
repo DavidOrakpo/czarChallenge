@@ -28,13 +28,13 @@ class _HomePageState extends ConsumerState<HomePage> {
 
     List<Widget> chatTextsVectors = [
       Align(
-        alignment: const Alignment(0.93, -0.07),
+        alignment: const Alignment(0.93, -0.07 + 0.1),
         child: SvgPicture.asset(
           "assets/images/text_line_one.svg",
         ),
       ),
       Align(
-        alignment: const Alignment(0.9, -0.04),
+        alignment: const Alignment(0.9, -0.04 + 0.1),
         child: SvgPicture.asset(
           "assets/images/text_line_two.svg",
         ),
@@ -99,7 +99,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               ),
             ),
             Positioned(
-              top: 30,
+              top: 40,
               right: -40,
               child: SvgPicture.asset(
                 "assets/images/spinning_vector_2.svg",
@@ -109,7 +109,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                   .animate(
                     onPlay: (controller) => controller.repeat(),
                   )
-                  .rotate(duration: 5.seconds),
+                  .rotate(duration: 8.seconds),
             ),
             Align(
               alignment: const Alignment(-0.4, -0.75),
@@ -117,12 +117,15 @@ class _HomePageState extends ConsumerState<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const SizedBox.shrink().animate(delay: 3400.ms).swap(
+                  const SizedBox(
+                    height: 30,
+                    width: 30,
+                  ).animate(delay: 3400.ms).crossfade(
                         duration: 700.ms,
-                        builder: (context, child) => Padding(
+                        builder: (context) => Padding(
                           padding: const EdgeInsets.only(right: 5),
                           child: SvgPicture.asset("assets/icons/app_icon.svg"),
-                        ).animate().fadeIn(duration: 700.ms),
+                        ).animate().fadeIn(duration: 700.ms).scale(),
                       ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -192,7 +195,11 @@ class _HomePageState extends ConsumerState<HomePage> {
                             ),
                           ),
                         ],
-                      ).animate(delay: 5000.ms).fadeIn()
+                      )
+                          .animate(delay: 5000.ms)
+                          .fadeIn()
+                          .then()
+                          .shimmer(color: AppColors.primary, duration: 500.ms)
                     ],
                   ),
                 ],
@@ -212,7 +219,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               ),
             ),
             Align(
-              alignment: const Alignment(1, 0),
+              alignment: const Alignment(1, 0.1),
               child: Transform.translate(
                 offset: const Offset(0, -5),
                 child: Transform.rotate(
@@ -225,7 +232,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               ),
             ),
             Align(
-              alignment: const Alignment(1, 0),
+              alignment: const Alignment(1, 0.1),
               child: SvgPicture.asset(
                 "assets/images/outter_chat_bubble.svg",
               ),
