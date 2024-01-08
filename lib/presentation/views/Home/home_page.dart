@@ -62,10 +62,11 @@ class _HomePageState extends ConsumerState<HomePage> {
       ),
     ];
 
-    maleChatLines = maleChatLines.animate(interval: 1200.ms).fadeIn();
+    maleChatLines =
+        maleChatLines.animate(interval: 800.ms, delay: 200.ms).fadeIn();
 
     chatTextsVectors =
-        chatTextsVectors.animate(interval: 1200.ms, delay: 3800.ms).fadeIn();
+        chatTextsVectors.animate(interval: 800.ms, delay: 2600.ms).fadeIn();
     return AnnotatedRegion(
       value: themeProv.dynamicStatusBarOverlay(),
       child: Scaffold(
@@ -110,49 +111,19 @@ class _HomePageState extends ConsumerState<HomePage> {
                   )
                   .rotate(duration: 5.seconds),
             ),
-            // Align(
-            //   alignment: Alignment(-0.8, -0.8),
-            //   child: Text(
-            //     'Speak',
-            //     style: TextStyle(
-            //       color: Colors.white.withOpacity(0.5),
-            //       fontSize: 40,
-            //       fontFamily: 'Josefin Sans',
-            //       fontWeight: FontWeight.w500,
-            //       height: 0,
-            //     ),
-            //   ),
-            // ),
             Align(
               alignment: const Alignment(-0.4, -0.75),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const SizedBox.shrink().animate(delay: 5000.ms).swap(
+                  const SizedBox.shrink().animate(delay: 3400.ms).swap(
                         duration: 700.ms,
                         builder: (context, child) => Padding(
                           padding: const EdgeInsets.only(right: 5),
                           child: SvgPicture.asset("assets/icons/app_icon.svg"),
                         ).animate().fadeIn(duration: 700.ms),
                       ),
-                  // Padding(
-                  //   padding: const EdgeInsets.only(right: 5),
-                  //   child: SvgPicture.asset("assets/icons/app_icon.svg"),
-                  // ).animate(delay: 5000.ms).fadeIn(),
-                  // Padding(
-                  //   padding: const EdgeInsets.only(right: 5),
-                  //   child: SvgPicture.asset("assets/icons/app_icon.svg"),
-                  // ).animate(delay: 5000.ms).fadeIn(),
-                  // 5.0.horizontalSpace(),
-                  // Row(
-                  //   children: [
-                  //     SvgPicture.asset("assets/images/male_text_line_one.svg"),
-                  //     SvgPicture.asset("assets/images/male_text_line_two.svg"),
-                  //     SvgPicture.asset(
-                  //         "assets/images/male_text_line_three.svg"),
-                  //   ],
-                  // ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -221,7 +192,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                             ),
                           ),
                         ],
-                      ).animate(delay: 6500.ms).fadeIn()
+                      ).animate(delay: 5000.ms).fadeIn()
                     ],
                   ),
                 ],
@@ -260,44 +231,7 @@ class _HomePageState extends ConsumerState<HomePage> {
               ),
             ),
             ...maleChatLines,
-
-            // Align(
-            //   alignment: const Alignment(-0.25, 0.23),
-            //   child: SvgPicture.asset(
-            //     "assets/images/male_text_line_one.svg",
-            //   ),
-            // ),
-            // Align(
-            //   alignment: const Alignment(-0.23, 0.24),
-            //   child: SvgPicture.asset(
-            //     "assets/images/male_text_line_two.svg",
-            //   ),
-            // ),
-            // Align(
-            //   alignment: const Alignment(-0.225, 0.26),
-            //   child: SvgPicture.asset(
-            //     "assets/images/male_text_line_three.svg",
-            //   ),
-            // ),
             ...chatTextsVectors
-            // Align(
-            //   alignment: const Alignment(0.93, -0.07),
-            //   child: SvgPicture.asset(
-            //     "assets/images/text_line_one.svg",
-            //   ),
-            // ),
-            // Align(
-            //   alignment: const Alignment(0.9, -0.04),
-            //   child: SvgPicture.asset(
-            //     "assets/images/text_line_two.svg",
-            //   ),
-            // ),
-            // Center(
-            //   child: Text(
-            //     "Home Page",
-            //     style: AppTextStyle.bodyThree.copyWith(color: AppColors.white),
-            //   ),
-            // ),
           ],
         ),
       ),
