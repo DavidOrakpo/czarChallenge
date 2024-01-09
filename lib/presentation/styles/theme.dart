@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:template/presentation/styles/app_colors.dart';
 import 'package:template/presentation/styles/text_styles.dart';
@@ -43,7 +44,8 @@ class Styles {
         ,
       ),
       //!Scaffold background color
-      scaffoldBackgroundColor: isDarkTheme ? AppColors.black : AppColors.white,
+      scaffoldBackgroundColor:
+          isDarkTheme ? AppColors.background : AppColors.background,
 
       primaryColor: isDarkTheme ? Colors.white : Colors.black,
       //!Check Box Theme
@@ -120,8 +122,9 @@ class Styles {
               : const ColorScheme.light()),
       //! Circular Progress Indicator Theme
       progressIndicatorTheme: const ProgressIndicatorThemeData(
-        circularTrackColor: Color(0xFFD9D9D9),
-        color: AppColors.primary,
+        circularTrackColor: Color(0xFF908A89),
+        linearTrackColor: Color(0xFF908A89),
+        color: AppColors.action,
       ),
       //!Tab Bar Theme
       tabBarTheme: TabBarTheme(
@@ -134,11 +137,40 @@ class Styles {
         labelPadding: const EdgeInsets.symmetric(horizontal: 20),
       ),
 
+      //! Navigation Bar Theme
+      navigationBarTheme: NavigationBarThemeData(
+        backgroundColor: AppColors.background,
+        height: 76,
+        shadowColor: Colors.transparent,
+        // elevation: 40,
+        surfaceTintColor: Colors.transparent,
+        indicatorColor: Colors.transparent,
+        overlayColor: MaterialStateProperty.all(Colors.transparent),
+        // labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
+        labelTextStyle: MaterialStateProperty.resolveWith((state) {
+          if (state.contains(MaterialState.selected)) {
+            return const TextStyle(color: AppColors.action);
+          }
+          return const TextStyle(color: AppColors.gray);
+        }),
+      ),
+
       //!App Bar Theme
       appBarTheme: AppBarTheme(
-          elevation: 0.0,
-          iconTheme: IconThemeData(
-              color: isDarkTheme ? AppColors.white : AppColors.black)),
+        elevation: 0.0,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          //<-- SEE HERE
+          // Status bar color
+          statusBarColor: isDarkTheme ? Colors.transparent : Colors.transparent,
+          statusBarIconBrightness:
+              isDarkTheme ? Brightness.light : Brightness.dark,
+          systemNavigationBarColor: isDarkTheme ? Colors.black : Colors.white,
+          statusBarBrightness: isDarkTheme ? Brightness.dark : Brightness.light,
+        ),
+        iconTheme: IconThemeData(
+          color: isDarkTheme ? AppColors.white : AppColors.black,
+        ),
+      ),
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.primary,
         // secondary: AppColors.purple,

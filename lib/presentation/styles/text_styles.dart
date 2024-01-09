@@ -22,6 +22,8 @@ class AppTextStyle {
 
   static TextStyle get bodyTwo => const TextStyle(
       fontWeight: FontWeight.w700, fontSize: 14, height: 14 / 14);
+  static TextStyle get buttonText => const TextStyle(
+      fontWeight: FontWeight.w700, fontSize: 16, height: 20 / 16);
 
   static TextStyle get bodyThree => const TextStyle(
       fontWeight: FontWeight.w400, fontSize: 14, height: 21 / 14);

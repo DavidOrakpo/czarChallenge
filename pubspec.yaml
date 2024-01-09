@@ -54,6 +54,7 @@ dependencies:
   dio_smart_retry: ^5.0.0
   logger: ^2.0.2+1
   flutter_animate: ^4.3.0
+  dotted_border: ^2.1.0
 
 dev_dependencies:
   flutter_test:

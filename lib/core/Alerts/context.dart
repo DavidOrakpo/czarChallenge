@@ -14,6 +14,21 @@ class AppNavigator {
 
   final GlobalKey<NavigatorState> _navKey = GlobalKey<NavigatorState>();
 
+  final _homeTabNavKey = GlobalKey<NavigatorState>();
+  GlobalKey<NavigatorState> get homeTabNavKey => _homeTabNavKey;
+
+  final _lessonTabNavKey = GlobalKey<NavigatorState>();
+  GlobalKey<NavigatorState> get lessonTabNavKey => _lessonTabNavKey;
+
+  final _exerciseTabNavKey = GlobalKey<NavigatorState>();
+  GlobalKey<NavigatorState> get excersizeTabNavKey => _exerciseTabNavKey;
+
+  final _gamesTabNavKey = GlobalKey<NavigatorState>();
+  GlobalKey<NavigatorState> get gamesTabNavKey => _gamesTabNavKey;
+
+  final _chatTabNavKey = GlobalKey<NavigatorState>();
+  GlobalKey<NavigatorState> get chatTabNavKey => _chatTabNavKey;
+
   /// The global key for the Navigator State
   GlobalKey<NavigatorState> get navKey => _navKey;
 }

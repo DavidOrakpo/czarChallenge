@@ -4,6 +4,9 @@ class AppColors {
   // static const Color darkShade = Color(0xFFF5F5F5);
   static const Color white = Color(0xFFFFFFFF);
   static const Color primary = Color(0xFFFF7562);
+  static const Color background = Color(0xFFDEDECE);
+  static const Color action = Color(0xFF650C01);
+  static const Color highlight = Color(0xFFC67C72);
   static const Color textGray = Color(0xFF979797);
   static const Color progressIndicatorBackgroundDark = Color(0xFF333333);
   static const Color black = Color(0xFF000000);

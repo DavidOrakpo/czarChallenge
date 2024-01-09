@@ -69,7 +69,7 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
     final goRouter = ref.watch(goRouterProvider);
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      theme: Styles.themeData(provider.darkTheme, context),
+      theme: Styles.themeData(false, context),
       routerConfig: goRouter,
       builder: EasyLoading.init(),
     );

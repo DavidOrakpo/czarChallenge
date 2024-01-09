@@ -23,6 +23,30 @@ class CustomSlideTransition extends CustomTransitionPage<void> {
         );
 }
 
+class CustomVerticalSlideTransition extends CustomTransitionPage<void> {
+  CustomVerticalSlideTransition({super.key, required super.child})
+      : super(
+          transitionDuration: const Duration(milliseconds: 750),
+          transitionsBuilder: (_, animation, __, child) {
+            return SlideTransition(
+              position: animation.drive(
+                Tween(
+                  begin: const Offset(0, 1.5),
+                  end: Offset.zero,
+                ).chain(
+                  CurveTween(curve: Curves.ease),
+                ),
+              ),
+              child: FadeTransition(
+                opacity:
+                    CurveTween(curve: Curves.easeInOutCirc).animate(animation),
+                child: child,
+              ),
+            );
+          },
+        );
+}
+
 class CustomFadeTransition extends CustomTransitionPage<void> {
   CustomFadeTransition({super.key, required super.child})
       : super(

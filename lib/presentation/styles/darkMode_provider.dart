@@ -28,19 +28,28 @@ class DarkThemeProvider with ChangeNotifier {
 
   bool get darkTheme => _darkTheme;
 
-  SystemUiOverlayStyle dynamicStatusBarOverlay() {
+  SystemUiOverlayStyle dynamicStatusBarOverlay({
+    Color? statusBarColor,
+    Brightness? statusBarIconBrightness,
+    Color? systemNavigationBarColor,
+    Brightness? systemNavigationBarIconBrightnes,
+  }) {
     return darkTheme
-        ? const SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent,
-            statusBarIconBrightness: Brightness.light,
-            systemNavigationBarColor: Colors.black,
-            systemNavigationBarIconBrightness: Brightness.light,
+        ? SystemUiOverlayStyle(
+            statusBarColor: statusBarColor ?? Colors.transparent,
+            statusBarIconBrightness:
+                statusBarIconBrightness ?? Brightness.light,
+            systemNavigationBarColor: systemNavigationBarColor ?? Colors.black,
+            systemNavigationBarIconBrightness:
+                systemNavigationBarIconBrightnes ?? Brightness.light,
           )
-        : const SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent,
-            statusBarIconBrightness: Brightness.light,
-            systemNavigationBarColor: Colors.white,
-            systemNavigationBarIconBrightness: Brightness.dark,
+        : SystemUiOverlayStyle(
+            statusBarColor: statusBarColor ?? Colors.transparent,
+            statusBarIconBrightness:
+                statusBarIconBrightness ?? Brightness.light,
+            systemNavigationBarColor: systemNavigationBarColor ?? Colors.white,
+            systemNavigationBarIconBrightness:
+                systemNavigationBarIconBrightnes ?? Brightness.dark,
           );
   }
 

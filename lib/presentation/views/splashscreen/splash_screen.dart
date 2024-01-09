@@ -2,24 +2,36 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:template/core/Extensions/extensions.dart';
 import 'dart:math' as math;
 import 'package:template/presentation/styles/app_colors.dart';
 import 'package:template/presentation/styles/darkMode_provider.dart';
 import 'package:template/presentation/styles/text_styles.dart';
+import 'package:template/presentation/views/onboarding/pages/interests.dart';
 
-class HomePage extends ConsumerStatefulWidget {
-  static const routeIdentifier = "HOME_PAGE";
-  const HomePage({super.key});
+class SplashScreenPage extends ConsumerStatefulWidget {
+  static const routeIdentifier = "SPLASH_SCREEN_PAGE";
+  const SplashScreenPage({super.key});
 
   @override
-  ConsumerState<HomePage> createState() => _HomePageState();
+  ConsumerState<SplashScreenPage> createState() => _SplashScreenPageState();
 }
 
-class _HomePageState extends ConsumerState<HomePage> {
+class _SplashScreenPageState extends ConsumerState<SplashScreenPage> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      await Future.delayed(
+        const Duration(
+          milliseconds: 4600,
+        ),
+        () {
+          context.pushNamed(InterestPage.routeIdentifier);
+        },
+      );
+    });
   }
 
   @override
@@ -66,7 +78,7 @@ class _HomePageState extends ConsumerState<HomePage> {
         maleChatLines.animate(interval: 800.ms, delay: 200.ms).fadeIn();
 
     chatTextsVectors =
-        chatTextsVectors.animate(interval: 800.ms, delay: 2600.ms).fadeIn();
+        chatTextsVectors.animate(interval: 800.ms, delay: 1600.ms).fadeIn();
     return AnnotatedRegion(
       value: themeProv.dynamicStatusBarOverlay(),
       child: Scaffold(
@@ -120,7 +132,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                   const SizedBox(
                     height: 30,
                     width: 30,
-                  ).animate(delay: 3400.ms).crossfade(
+                  ).animate(delay: 2400.ms).crossfade(
                         duration: 700.ms,
                         builder: (context) => Padding(
                           padding: const EdgeInsets.only(right: 5),
@@ -196,10 +208,10 @@ class _HomePageState extends ConsumerState<HomePage> {
                           ),
                         ],
                       )
-                          .animate(delay: 5000.ms)
+                          .animate(delay: 3700.ms)
                           .fadeIn()
                           .then()
-                          .shimmer(color: AppColors.primary, duration: 500.ms)
+                          .shimmer(color: AppColors.primary, duration: 450.ms)
                     ],
                   ),
                 ],
