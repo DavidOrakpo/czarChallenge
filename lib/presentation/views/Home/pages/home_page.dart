@@ -24,7 +24,8 @@ class _HomePageState extends ConsumerState<HomePage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: AppSpacings.horizontalPadding.copyWith(bottom: 40),
+            padding:
+                AppSpacings.horizontalPadding.copyWith(bottom: 20, top: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,7 +82,7 @@ class _HomePageState extends ConsumerState<HomePage> {
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 4 / 3,
+                    childAspectRatio: 4 / 3.5,
                     crossAxisSpacing: 20,
                     mainAxisSpacing: 30,
                   ),
@@ -138,8 +139,8 @@ class _HomePageState extends ConsumerState<HomePage> {
                     //   completionPercent: 0.6,
                     // )
                   ]
-                      .animate(interval: 300.ms)
-                      .fadeIn(duration: 250.ms)
+                      .animate(interval: 120.ms)
+                      .fadeIn(duration: 200.ms, curve: Curves.easeIn)
                       .slideY(begin: 1),
                 ),
                 // GridView.builder(

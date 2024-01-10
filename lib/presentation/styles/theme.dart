@@ -128,13 +128,23 @@ class Styles {
       ),
       //!Tab Bar Theme
       tabBarTheme: TabBarTheme(
+        splashFactory: NoSplash.splashFactory,
+        overlayColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
+          // Use the default focused overlay color
+          return states.contains(MaterialState.focused)
+              ? null
+              : Colors.transparent;
+        }),
         indicator: BoxDecoration(
-          color: AppColors.white,
-          borderRadius: BorderRadius.circular(4),
+          color: isDarkTheme ? const Color(0xFF6B6B6B) : AppColors.action,
+          borderRadius: BorderRadius.circular(30),
         ),
+        indicatorSize: TabBarIndicatorSize.tab,
+        // splashFactory: InteractiveInkFeatureFactor,
         unselectedLabelColor: AppColors.textGray,
-        labelColor: isDarkTheme ? AppColors.black : AppColors.black,
-        labelPadding: const EdgeInsets.symmetric(horizontal: 20),
+        labelColor: isDarkTheme ? AppColors.white : AppColors.white,
+        labelPadding: const EdgeInsets.symmetric(horizontal: 10),
       ),
 
       //! Navigation Bar Theme
