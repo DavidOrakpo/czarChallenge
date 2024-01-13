@@ -9,6 +9,8 @@ import 'package:template/presentation/views/Games/Pages/games.dart';
 import 'package:template/presentation/views/Home/pages/bottom_nav_manager.dart';
 import 'package:template/presentation/views/Home/pages/home_page.dart';
 import 'package:template/presentation/views/Lesson/Pages/lessons.dart';
+import 'package:template/presentation/views/Speaking/Pages/speaking.dart';
+import 'package:template/presentation/views/Streaks/Pages/streaks.dart';
 import 'package:template/presentation/views/onboarding/pages/interests.dart';
 import 'package:template/presentation/views/splashscreen/splash_screen.dart';
 
@@ -40,6 +42,32 @@ class AppRoutes {
             return CustomVerticalSlideTransition(
               key: state.pageKey,
               child: const InterestPage(),
+            );
+          },
+        ),
+        GoRoute(
+          path: "/streaks",
+          name: StreaksPage.routeIdentifier,
+          parentNavigatorKey: AppNavigator().navKey,
+          builder: (context, state) => const StreaksPage(),
+          pageBuilder: (context, state) {
+            return CustomVerticalSlideTransition(
+              key: state.pageKey,
+              duration: const Duration(milliseconds: 350),
+              child: const StreaksPage(),
+            );
+          },
+        ),
+        GoRoute(
+          path: "/speakingPage",
+          name: SpeakingPage.routeIdentifier,
+          parentNavigatorKey: AppNavigator().navKey,
+          builder: (context, state) => const SpeakingPage(),
+          pageBuilder: (context, state) {
+            return CustomVerticalSlideTransition(
+              key: state.pageKey,
+              duration: const Duration(milliseconds: 350),
+              child: const SpeakingPage(),
             );
           },
         ),

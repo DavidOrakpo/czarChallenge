@@ -150,7 +150,7 @@ class Styles {
       //! Navigation Bar Theme
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: AppColors.background,
-        height: 76,
+        height: 65,
         shadowColor: Colors.transparent,
         // elevation: 40,
         surfaceTintColor: Colors.transparent,

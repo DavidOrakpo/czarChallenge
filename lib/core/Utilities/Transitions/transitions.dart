@@ -24,9 +24,13 @@ class CustomSlideTransition extends CustomTransitionPage<void> {
 }
 
 class CustomVerticalSlideTransition extends CustomTransitionPage<void> {
-  CustomVerticalSlideTransition({super.key, required super.child})
+  final Duration? duration;
+  CustomVerticalSlideTransition(
+      {super.key,
+      required super.child,
+      this.duration = const Duration(milliseconds: 750)})
       : super(
-          transitionDuration: const Duration(milliseconds: 750),
+          transitionDuration: duration!,
           transitionsBuilder: (_, animation, __, child) {
             return SlideTransition(
               position: animation.drive(

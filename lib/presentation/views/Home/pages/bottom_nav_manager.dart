@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:template/core/Extensions/extensions.dart';
 import 'package:template/presentation/styles/app_colors.dart';
@@ -203,8 +204,8 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
                   //     ),
                   //   ],
                   // ),
-                  icon: Icon(
-                    Icons.home,
+                  icon: SvgPicture.asset(
+                    "assets/icons/home_icon.svg",
                     color: navigationShell.currentIndex == 0
                         ? AppColors.action
                         : AppColors.gray,
@@ -212,8 +213,8 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
                 ),
                 NavigationDestination(
                   label: 'Lesson',
-                  icon: Icon(
-                    Icons.lightbulb,
+                  icon: SvgPicture.asset(
+                    "assets/icons/lesson_icon.svg",
                     color: navigationShell.currentIndex == 1
                         ? AppColors.action
                         : AppColors.gray,
@@ -221,8 +222,8 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
                 ),
                 NavigationDestination(
                   label: 'Exercise',
-                  icon: Icon(
-                    Icons.message,
+                  icon: SvgPicture.asset(
+                    "assets/icons/exercise_icon.svg",
                     color: navigationShell.currentIndex == 2
                         ? AppColors.action
                         : AppColors.gray,
@@ -230,8 +231,8 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
                 ),
                 NavigationDestination(
                   label: 'Games',
-                  icon: Icon(
-                    Icons.settings,
+                  icon: SvgPicture.asset(
+                    "assets/icons/games_icon.svg",
                     color: navigationShell.currentIndex == 3
                         ? AppColors.action
                         : AppColors.gray,
@@ -239,8 +240,8 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
                 ),
                 NavigationDestination(
                   label: 'Chat',
-                  icon: Icon(
-                    Icons.chat,
+                  icon: SvgPicture.asset(
+                    "assets/icons/chat_icon.svg",
                     color: navigationShell.currentIndex == 4
                         ? AppColors.action
                         : AppColors.gray,

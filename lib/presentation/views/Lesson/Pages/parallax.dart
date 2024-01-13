@@ -24,7 +24,15 @@ class LessonItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 150,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(20), boxShadow: [
+        // BoxShadow(
+        //   offset: Offset(0, 3),
+        //   blurRadius: 5,
+        //   spreadRadius: 5,
+        //   color: AppColors.gray.shade400.withOpacity(0.9),
+        // )
+      ]),
 
       // padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: AspectRatio(
