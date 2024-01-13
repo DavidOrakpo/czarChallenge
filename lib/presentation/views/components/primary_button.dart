@@ -95,20 +95,20 @@ class PrimaryButton extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      Icon(
+                        icon!,
+                        color: iconColor,
+                        size: 18,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
                       Text(
                         text,
                         style: AppTextStyle.buttonText.copyWith(
                           color: textColor,
                           fontSize: fontSize,
                         ),
-                      ),
-                      const SizedBox(
-                        width: 5,
-                      ),
-                      Icon(
-                        icon!,
-                        color: iconColor,
-                        size: 18,
                       ),
                     ],
                   )

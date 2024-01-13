@@ -34,6 +34,57 @@ enum Interests {
   final String title;
 }
 
+enum ProfileStats {
+  Challenges(
+    title: "Challenges",
+    amount: "17",
+    isSVG: false,
+    imageAsset: "assets/icons/target.png",
+  ),
+  LessonsPassed(
+    title: "Lessons Passed",
+    amount: "17",
+    isSVG: true,
+    imageAsset: "assets/icons/lesson_icon.svg",
+  ),
+  DiamondGem(
+    title: "Total Diamond",
+    amount: "05",
+    imageAsset: "assets/icons/diamond_icon.jpg",
+    isSVG: false,
+  ),
+  LifetimeXP(
+    title: "Total Lifetime XP",
+    amount: "11,147",
+    imageAsset: "assets/icons/lightning_bolt.svg",
+    isSVG: true,
+  ),
+  Streaks(
+    title: "Streaks",
+    amount: "17",
+    imageAsset: "assets/icons/fire_icon.png",
+    isSVG: false,
+  ),
+  TopPercent(
+    title: "Top 20% Global",
+    amount: "36",
+    imageAsset: "assets/icons/badge_image.jpg",
+    isSVG: false,
+  ),
+  ;
+
+  const ProfileStats(
+      {required this.title,
+      required this.isSVG,
+      required this.imageAsset,
+      required this.amount});
+
+  final String title;
+  final String imageAsset;
+  final bool isSVG;
+  final String amount;
+}
+
 enum Lessons {
   FirstTrip(
       lessonName: "First Trip",

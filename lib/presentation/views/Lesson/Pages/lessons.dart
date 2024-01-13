@@ -78,26 +78,30 @@ class _LessonsPageState extends ConsumerState<LessonsPage>
                   clipBehavior: Clip.none,
                   controller: tabController,
                   children: [
-                    ListView.separated(
-                      itemCount: Lessons.values.length,
-                      shrinkWrap: true,
-                      // clipBehavior: Clip.none,
-                      separatorBuilder: (context, index) =>
-                          30.0.verticalSpace(),
-                      itemBuilder: (context, index) {
-                        var item = Lessons.values[index];
-                        return LessonItem(
-                          imageUrl: item.assetImage,
-                          name: item.lessonName,
-                          iconColor: item.iconColor,
-                          details: item.details,
-                        ).padding(
-                          padding: EdgeInsets.only(
-                            bottom:
-                                index == (Lessons.values.length - 1) ? 20 : 0,
-                          ),
-                        );
-                      },
+                    ScrollConfiguration(
+                      behavior: MyScrollBehaviour(),
+                      child: ListView.separated(
+                        itemCount: Lessons.values.length,
+                        physics: const BouncingScrollPhysics(),
+                        shrinkWrap: true,
+                        // clipBehavior: Clip.none,
+                        separatorBuilder: (context, index) =>
+                            30.0.verticalSpace(),
+                        itemBuilder: (context, index) {
+                          var item = Lessons.values[index];
+                          return LessonItem(
+                            imageUrl: item.assetImage,
+                            name: item.lessonName,
+                            iconColor: item.iconColor,
+                            details: item.details,
+                          ).padding(
+                            padding: EdgeInsets.only(
+                              bottom:
+                                  index == (Lessons.values.length - 1) ? 20 : 0,
+                            ),
+                          );
+                        },
+                      ),
                     ),
                     // Container(
                     //   color: Colors.red,

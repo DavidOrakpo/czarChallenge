@@ -155,7 +155,7 @@ class Styles {
         // elevation: 40,
         surfaceTintColor: Colors.transparent,
         indicatorColor: Colors.transparent,
-        overlayColor: MaterialStateProperty.all(Colors.transparent),
+        // overlayColor: MaterialStateProperty.all(Colors.transparent),
         // labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
         labelTextStyle: MaterialStateProperty.resolveWith((state) {
           if (state.contains(MaterialState.selected)) {

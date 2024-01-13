@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:template/core/Extensions/extensions.dart';
 import 'package:template/presentation/styles/app_colors.dart';
 import 'package:template/presentation/styles/spacing.dart';
 import 'package:template/presentation/styles/text_styles.dart';
 import 'package:template/presentation/views/Home/widgets/mini_app_bar.dart';
 import 'package:template/presentation/views/Home/widgets/sphere_tile.dart';
+import 'package:template/presentation/views/Profile/Pages/profile.dart';
 
 class HomePage extends ConsumerStatefulWidget {
   static const routeIdentifier = "HOME_PAGE";
@@ -23,6 +25,7 @@ class _HomePageState extends ConsumerState<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: Padding(
             padding:
                 AppSpacings.horizontalPadding.copyWith(bottom: 20, top: 20),
@@ -36,12 +39,20 @@ class _HomePageState extends ConsumerState<HomePage> {
                       child: MiniAppBar(),
                     ),
                     15.0.horizontalSpace(),
-                    CircleAvatar(
-                      backgroundColor: const Color(0xFFFFBFB6),
-                      child: Image.asset(
-                        "assets/icons/profile_icon.png",
-                        height: 70,
-                        width: 70,
+                    GestureDetector(
+                      onTap: () {
+                        context.pushNamed(ProfilePage.routeIdentifier);
+                      },
+                      child: Hero(
+                        tag: "profileImage",
+                        child: CircleAvatar(
+                          backgroundColor: const Color(0xFFFFBFB6),
+                          child: Image.asset(
+                            "assets/icons/profile_icon.png",
+                            height: 70,
+                            width: 70,
+                          ),
+                        ),
                       ),
                     )
                   ],

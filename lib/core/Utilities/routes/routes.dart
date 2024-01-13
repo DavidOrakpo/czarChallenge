@@ -9,6 +9,7 @@ import 'package:template/presentation/views/Games/Pages/games.dart';
 import 'package:template/presentation/views/Home/pages/bottom_nav_manager.dart';
 import 'package:template/presentation/views/Home/pages/home_page.dart';
 import 'package:template/presentation/views/Lesson/Pages/lessons.dart';
+import 'package:template/presentation/views/Profile/Pages/profile.dart';
 import 'package:template/presentation/views/Speaking/Pages/speaking.dart';
 import 'package:template/presentation/views/Streaks/Pages/streaks.dart';
 import 'package:template/presentation/views/onboarding/pages/interests.dart';
@@ -55,6 +56,19 @@ class AppRoutes {
               key: state.pageKey,
               duration: const Duration(milliseconds: 350),
               child: const StreaksPage(),
+            );
+          },
+        ),
+        GoRoute(
+          path: "/profile",
+          name: ProfilePage.routeIdentifier,
+          parentNavigatorKey: AppNavigator().navKey,
+          builder: (context, state) => const ProfilePage(),
+          pageBuilder: (context, state) {
+            return CustomFadeTransition(
+              key: state.pageKey,
+              // duration: const Duration(milliseconds: 350),
+              child: const ProfilePage(),
             );
           },
         ),
