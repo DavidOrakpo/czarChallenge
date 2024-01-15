@@ -50,7 +50,7 @@ enum ProfileStats {
   DiamondGem(
     title: "Total Diamond",
     amount: "05",
-    imageAsset: "assets/icons/diamond_icon.jpg",
+    imageAsset: "assets/icons/diamond_icon.png",
     isSVG: false,
   ),
   LifetimeXP(
@@ -68,7 +68,7 @@ enum ProfileStats {
   TopPercent(
     title: "Top 20% Global",
     amount: "36",
-    imageAsset: "assets/icons/badge_image.jpg",
+    imageAsset: "assets/icons/badge_image.png",
     isSVG: false,
   ),
   ;
